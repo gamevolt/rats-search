@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+
+### 🐛 Bug Fixes
+
+
+- **ci:** Re-sign macOS ARM bundle after adding Manticore binaries([ba52029](https://github.com/DEgITx/rats-search/commit/ba520294a4de799e6438d51b5057d7fce79d1ca4)) by @LoneStarMac
+
+
+### 📚 Documentation
+
+
+- Update CHANGELOG.md for v2.3.2([80d1910](https://github.com/DEgITx/rats-search/commit/80d19102afdf2acd109b20d9d607015d1881c7ac)) by @github-actions[bot]
+
+
+
+
+### 👥 Contributors
+
+
+
+- [@LoneStarMac](https://github.com/LoneStarMac) — 1 commit
+
+
+- [@github-actions[bot]](https://github.com/github-actions[bot]) — 1 commit
+
+
 ## [2.3.2](https://github.com/DEgITx/rats-search/compare/v2.3.1...v2.3.2) (2026-09-13)
 
 
@@ -653,7 +680,7 @@ All notable changes to this project will be documented in this file.
 ### 🐛 Bug Fixes
 
 
-- **docker:** Correct Qt6 package names for Ubuntu 24.04 ([#275](https://github.com/DEgITx/rats-search/pull/275))([3baa22b](https://github.com/DEgITx/rats-search/commit/3baa22ba6daea8f8fd0e5366c9ae63bc2c0853c2)) by @skyline75489
+- **docker:** Correct Qt6 package names for Ubuntu 24.04([3baa22b](https://github.com/DEgITx/rats-search/commit/3baa22ba6daea8f8fd0e5366c9ae63bc2c0853c2)) by @skyline75489
 
 
 ### 📚 Documentation
