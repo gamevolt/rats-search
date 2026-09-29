@@ -2,19 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [2.3.3](https://github.com/DEgITx/rats-search/compare/v2.3.2...v2.3.3) (2026-09-29)
 
 
 ### 🐛 Bug Fixes
 
 
-- **ci:** Re-sign macOS ARM bundle after adding Manticore binaries([ba52029](https://github.com/DEgITx/rats-search/commit/ba520294a4de799e6438d51b5057d7fce79d1ca4)) by @LoneStarMac
+- **ci:** Re-sign macOS ARM bundle after adding Manticore binaries([4c32c46](https://github.com/DEgITx/rats-search/commit/4c32c469faae54c0e001c080afd78827baaa8af2)) by @LoneStarMac
+- **ci:** Bump actions/upload-artifact from v6 to v7([377b45e](https://github.com/DEgITx/rats-search/commit/377b45e141bed8b684613fb4e0c7792f9d920661)) by @DEgITx
 
 
 ### 📚 Documentation
 
 
 - Update CHANGELOG.md for v2.3.2([80d1910](https://github.com/DEgITx/rats-search/commit/80d19102afdf2acd109b20d9d607015d1881c7ac)) by @github-actions[bot]
+- Update CHANGELOG.md for v2.3.3-beta ([#311](https://github.com/DEgITx/rats-search/pull/311))([f61477d](https://github.com/DEgITx/rats-search/commit/f61477dfecbf990b818abe08304e0214b78ba377)) by @github-actions[bot]
 
 
 
@@ -23,10 +25,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+- [@DEgITx](https://github.com/DEgITx) — 1 commit
+
+
 - [@LoneStarMac](https://github.com/LoneStarMac) — 1 commit
 
 
-- [@github-actions[bot]](https://github.com/github-actions[bot]) — 1 commit
+- [@github-actions[bot]](https://github.com/github-actions[bot]) — 2 commits
 
 
 ## [2.3.2](https://github.com/DEgITx/rats-search/compare/v2.3.1...v2.3.2) (2026-09-13)
@@ -680,7 +685,7 @@ All notable changes to this project will be documented in this file.
 ### 🐛 Bug Fixes
 
 
-- **docker:** Correct Qt6 package names for Ubuntu 24.04([3baa22b](https://github.com/DEgITx/rats-search/commit/3baa22ba6daea8f8fd0e5366c9ae63bc2c0853c2)) by @skyline75489
+- **docker:** Correct Qt6 package names for Ubuntu 24.04 ([#275](https://github.com/DEgITx/rats-search/pull/275))([3baa22b](https://github.com/DEgITx/rats-search/commit/3baa22ba6daea8f8fd0e5366c9ae63bc2c0853c2)) by @skyline75489
 
 
 ### 📚 Documentation
