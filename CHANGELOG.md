@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.4](https://github.com/DEgITx/rats-search/compare/v2.3.3...v2.3.4) (2026-10-03)
+
+
+### 📚 Documentation
+
+
+- Update CHANGELOG.md for v2.3.3([fe7048b](https://github.com/DEgITx/rats-search/commit/fe7048bcc7a4223fb981ce63ba054936417f4b8a)) by @github-actions[bot]
+
+
+### 🔧 Refactor
+
+
+- **net:** Share scrape scheduling with interactive priority([2152591](https://github.com/DEgITx/rats-search/commit/2152591a0065030b726c1bf493f8f70183f58791)) by @DEgITx
+
+
+### 🚀 Features
+
+
+- **ui:** Allow disabling the exit confirmation prompt([c2c86cd](https://github.com/DEgITx/rats-search/commit/c2c86cdf0b8405374d98e843552bdbef7a99493c)) by @DEgITx
+- **ui:** Remember splitter sizes, column widths and search filters([b2ee0c9](https://github.com/DEgITx/rats-search/commit/b2ee0c943f62ef20825e43ba0aa23e9c0a6ef37d)) by @DEgITx
+
+
+
+
+### 👥 Contributors
+
+
+
+- [@DEgITx](https://github.com/DEgITx) — 3 commits
+
+
+- [@github-actions[bot]](https://github.com/github-actions[bot]) — 1 commit
+
+
 ## [2.3.3](https://github.com/DEgITx/rats-search/compare/v2.3.2...v2.3.3) (2026-09-29)
 
 
