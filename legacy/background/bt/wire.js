@@ -202,22 +202,23 @@ Wire.prototype._checkDone = function () {
 };
 
 Wire.prototype._onDone = function(metadata) {
-	try {
-		var info = bencode.decode(metadata).info;
-		if (info) {
-			metadata = bencode.encode(info);
-		}
-	}
-	catch (err) {
-		this._fail();
-		return;
-	}
-	var infohash = crypto.createHash('sha1').update(metadata).digest('hex');
-	if (this._infohash.toString('hex') != infohash ) {
-		this._fail();
-		return false;
-	}
-	this.emit('metadata', {info: bencode.decode(metadata, 'utf8')}, this._infohash);
+    let info;
+    try {
+        info = bencode.decode(metadata).info;
+        if (info) {
+            metadata = bencode.encode(info);
+        }
+    }
+    catch (err) {
+        this._fail();
+        return;
+    }
+    const infohash = crypto.createHash('sha256').update(metadata).digest('hex');
+    if (this._infohash.toString('hex') != infohash ) {
+        this._fail();
+        return false;
+    }
+    this.emit('metadata', {info: bencode.decode(metadata, 'utf8')}, this._infohash);
 };
 
 Wire.prototype._fail = function() {
