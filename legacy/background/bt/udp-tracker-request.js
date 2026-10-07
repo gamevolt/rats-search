@@ -22,7 +22,7 @@ let message = function (buf, host, port) {
 
 let connectTracker = function(connection) {
 	debug('start screape connection');
-	let buffer = new Buffer(16);
+	let buffer = Buffer.alloc(16);
 
 	const transactionId = Math.floor((Math.random() * 100000) + 1);
 
@@ -44,33 +44,33 @@ let connectTracker = function(connection) {
 	message(buffer, connection.host, connection.port);
 };
 
-let scrapeTorrent = function (connectionIdHigh, connectionIdLow, transactionId) {
-	let connection = requests[transactionId];
-	if(!connection)
-		return;
+	let scrapeTorrent = function (connectionIdHigh, connectionIdLow, transactionId) {
+		let connection = requests[transactionId];
+		if(!connection)
+			return;
 
-	if(!connection.hash || connection.hash.length != 40)
-		return
+		if(!connection.hash || connection.hash.length != 40)
+			return
 
-	debug('start scrape');
-	let buffer = new Buffer(56)
+		debug('start scrape');
+		let buffer = Buffer.alloc(56)
 
-	buffer.fill(0);
+		buffer.fill(0);
 
-	buffer.writeUInt32BE(connectionIdHigh, 0);
-	buffer.writeUInt32BE(connectionIdLow, 4);
-	buffer.writeUInt32BE(ACTION_SCRAPE, 8);
-	buffer.writeUInt32BE(transactionId, 12);
+		buffer.writeUInt32BE(connectionIdHigh, 0);
+		buffer.writeUInt32BE(connectionIdLow, 4);
+		buffer.writeUInt32BE(ACTION_SCRAPE, 8);
+		buffer.writeUInt32BE(transactionId, 12);
 
-	try
-	{
-		buffer.write(connection.hash, 16, buffer.length, 'hex');
-		// do scrape
-		message(buffer, connection.host, connection.port);
-	} catch(error)
-	{
-		logT('udp-tracker', 'ERROR on scrape', error)
-	}
+		try
+		{
+			buffer.write(connection.hash, 16, buffer.length, 'hex');
+			// do scrape
+			message(buffer, connection.host, connection.port);
+		} catch(error)
+		{
+			logT('udp-tracker', 'ERROR on scrape', error)
+		}
 };
 
 server.on("message", function (msg, rinfo) {
