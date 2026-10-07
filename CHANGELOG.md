@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.5](https://github.com/DEgITx/rats-search/compare/v2.3.4...v2.3.5) (2026-10-03)
+
+
+### 📚 Documentation
+
+
+- Update CHANGELOG.md for v2.3.4([2e3c2c3](https://github.com/DEgITx/rats-search/commit/2e3c2c3db67031f41f98292748c428699135a1c2)) by @github-actions[bot]
+
+
+### 🚀 Features
+
+
+- **ui:** Add configurable interface font family and size([8415a20](https://github.com/DEgITx/rats-search/commit/8415a208025d3827f2f380f3bfe530557a10eaba)) by @DEgITx
+
+
+
+
+### 👥 Contributors
+
+
+
+- [@DEgITx](https://github.com/DEgITx) — 1 commit
+
+
+- [@github-actions[bot]](https://github.com/github-actions[bot]) — 1 commit
+
+
 ## [2.3.4](https://github.com/DEgITx/rats-search/compare/v2.3.3...v2.3.4) (2026-10-03)
 
 
