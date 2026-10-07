@@ -4,7 +4,7 @@ const crypto = require('crypto')
 
 class Node {
 	static generateID() {
-		return crypto.createHash('sha1').update(crypto.randomBytes(20)).digest()
+		return crypto.createHash('sha256').update(crypto.randomBytes(20)).digest()
 	}
 
 	constructor(id) {

@@ -212,7 +212,7 @@ Wire.prototype._onDone = function(metadata) {
 		this._fail();
 		return;
 	}
-	var infohash = crypto.createHash('sha1').update(metadata).digest('hex');
+	var infohash = crypto.createHash('sha256').update(metadata).digest('hex');
 	if (this._infohash.toString('hex') != infohash ) {
 		this._fail();
 		return false;
