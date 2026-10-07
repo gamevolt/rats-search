@@ -22,7 +22,7 @@ let message = function (buf, host, port) {
 
 let connectTracker = function(connection) {
 	debug('start screape connection');
-	let buffer = new Buffer(16);
+	let buffer = Buffer.alloc(16);
 
 	const transactionId = Math.floor((Math.random() * 100000) + 1);
 
@@ -53,7 +53,7 @@ let scrapeTorrent = function (connectionIdHigh, connectionIdLow, transactionId) 
 		return
 
 	debug('start scrape');
-	let buffer = new Buffer(56)
+	let buffer = Buffer.alloc(56)
 
 	buffer.fill(0);
 

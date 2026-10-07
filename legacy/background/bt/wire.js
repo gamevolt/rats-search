@@ -9,8 +9,8 @@ var bencode = require('bencode');
 
 var {Node} = require('./table');
 
-var BT_RESERVED = new Buffer([0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x01]);
-var BT_PROTOCOL = new Buffer('BitTorrent protocol');
+var BT_RESERVED = Buffer.from([0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x01]);
+var BT_PROTOCOL = Buffer.from('BitTorrent protocol');
 var PIECE_LENGTH = Math.pow(2, 14);
 var MAX_METADATA_SIZE = 10000000;
 var BITFIELD_GROW = 1000;
@@ -127,8 +127,8 @@ Wire.prototype._requestPieces = function() {
 
 Wire.prototype._requestPiece = function(piece) {
 	var msg = Buffer.concat([
-		new Buffer([BT_MSG_ID]),
-		new Buffer([this._ut_metadata]),
+		Buffer.from([BT_MSG_ID]),
+		Buffer.from([this._ut_metadata]),
 		bencode.encode({msg_type: 0, piece: piece})
 	]);
 	this._sendMessage(msg);
@@ -139,7 +139,7 @@ Wire.prototype._sendPacket = function(packet) {
 };
 
 Wire.prototype._sendMessage = function(msg) {
-	var buf = new Buffer(4);
+	var buf = Buffer.alloc(4);
 	buf.writeUInt32BE(msg.length, 0);
 	this._sendPacket(Buffer.concat([buf, msg]));
 };
@@ -147,7 +147,7 @@ Wire.prototype._sendMessage = function(msg) {
 Wire.prototype.sendHandshake = function() {
 	var peerID = Node.generateID();
 	var packet = Buffer.concat([
-		new Buffer([BT_PROTOCOL.length]),
+		Buffer.from([BT_PROTOCOL.length]),
 		BT_PROTOCOL, BT_RESERVED, this._infohash,  peerID
 	]);
 	this._sendPacket(packet);
@@ -155,8 +155,8 @@ Wire.prototype.sendHandshake = function() {
 
 Wire.prototype._sendExtHandshake = function() {
 	var msg = Buffer.concat([
-		new Buffer([BT_MSG_ID]),
-		new Buffer([EXT_HANDSHAKE_ID]),
+		Buffer.from([BT_MSG_ID]),
+		Buffer.from([EXT_HANDSHAKE_ID]),
 		bencode.encode({m: {ut_metadata: 1}})
 	]);
 	this._sendMessage(msg);
