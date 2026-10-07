@@ -630,7 +630,7 @@ module.exports = async ({
 
 		if(config.p2p)
 		{
-			spider.announceHashes = [crypto.createHash('sha1').update('degrats-v1').digest()]
+			spider.announceHashes = [crypto.createHash('sha256').update('degrats-v1').digest()]
 		}
 		else
 		{
@@ -641,7 +641,7 @@ module.exports = async ({
 		delete copyConfig['load'];
 		delete copyConfig['reload'];
 		send('configChanged', copyConfig)
-        
+	        
 		if(typeof callback === 'function')
 			callback(true)
 	});

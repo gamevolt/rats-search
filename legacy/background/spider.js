@@ -967,7 +967,7 @@ module.exports = function (send, recive, dataDirectory, version, env, {version: 
 			spider.listen(config.spiderPort)
 			if(config.p2p)
 			{
-				spider.announceHashes = [crypto.createHash('sha1').update('degrats-v1').digest()]
+				spider.announceHashes = [crypto.createHash('sha256').update('degrats-v1').digest()]
 			}
 		}
 
