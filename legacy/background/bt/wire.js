@@ -1,23 +1,23 @@
 'use strict';
 
-var stream = require('stream');
-var crypto = require('crypto');
-var util = require('util');
+const stream = require('stream');
+const crypto = require('crypto');
+const util = require('util');
 
-var BitField = require('bitfield');
-var bencode = require('bencode');
+const BitField = require('bitfield');
+const bencode = require('bencode');
 
-var {Node} = require('./table');
+const {Node} = require('./table');
 
-var BT_RESERVED = Buffer.from([0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x01]);
-var BT_PROTOCOL = Buffer.from('BitTorrent protocol');
-var PIECE_LENGTH = Math.pow(2, 14);
-var MAX_METADATA_SIZE = 10000000;
-var BITFIELD_GROW = 1000;
-var EXT_HANDSHAKE_ID = 0;
-var BT_MSG_ID = 20;
+const BT_RESERVED = Buffer.from([0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x01]);
+const BT_PROTOCOL = Buffer.from('BitTorrent protocol');
+const PIECE_LENGTH = Math.pow(2, 14);
+const MAX_METADATA_SIZE = 10000000;
+const BITFIELD_GROW = 1000;
+const EXT_HANDSHAKE_ID = 0;
+const BT_MSG_ID = 20;
 
-var Wire = function(infohash) {
+function Wire(infohash) {
 	stream.Duplex.call(this);
 
 	this._bitfield = new BitField(0, { grow: BITFIELD_GROW });
@@ -139,7 +139,7 @@ Wire.prototype._sendPacket = function(packet) {
 };
 
 Wire.prototype._sendMessage = function(msg) {
-	var buf = Buffer.alloc(4);
+	const buf = Buffer.alloc(4);
 	buf.writeUInt32BE(msg.length, 0);
 	this._sendPacket(Buffer.concat([buf, msg]));
 };
